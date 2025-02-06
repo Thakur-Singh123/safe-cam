@@ -1,0 +1,51 @@
+.lights-red-color {
+	letter-spacing: 0.3px;
+	font-weight: 600;
+	color: #e61111d9;
+}
+
+.lights-green-color {
+	letter-spacing: 0.3px;
+	font-weight: 600;
+	width: 94px;
+	height: auto;
+	color: #1cb31c;
+}
+
+.lights-pink-color {
+	letter-spacing: 0.3px;
+	font-weight: 600;
+	width: 94px;
+	height: auto;
+	color: #6d20dddb;
+}
+
+.lights-yellow-color {
+	letter-spacing: 0.3px;
+	font-weight: 600;
+	width: 94px;
+	height: auto;
+	color: #118a97;
+}
+
+.trash-contact {
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin: -4px 2px 2px;
+}
+
+.trash-contact a {
+    display: inline-block;
+}
+
+.trash-contact img {
+    width: 18px;
+    height: auto;
+    cursor: pointer;
+}
+
+h2.mb-3 {
+    font-size: 20px;
+	padding: 5px 5px 0px 5px;
+}

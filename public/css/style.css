@@ -1,0 +1,65 @@
+.notifaction-green {
+    color: green;
+    font-size: 20px;
+}
+
+.notifaction-red {
+    color: red;
+    font-size: 20px;
+}
+/* Profile change photo CSS Start */
+.avatar-upload {
+    position: relative;
+    width: 150px;
+    /* margin: 20px auto; */
+}
+
+.avatar-upload .avatar-edit {
+    position: absolute;
+    bottom: 105px;
+    right: 2px;
+    z-index: 1;
+    padding: 0px 0px 1px 0px;
+}
+
+.avatar-upload .avatar-edit input {
+    display: none;
+}
+
+.avatar-upload .avatar-edit label {
+    width: 34px;
+    height: 34px;
+    background: #007a4d;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.avatar-upload .avatar-edit label i {
+    color: #ffffff;
+    font-size: 16px;
+}
+
+.avatar-upload .avatar-edit label:hover {
+    background: #005a36;
+}
+
+.add-new-student-pic {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.avatar-upload .avatar-preview img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 2px solid #007a4d;
+    object-fit: cover;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
