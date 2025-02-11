@@ -16,9 +16,12 @@ use Illuminate\Support\Facades\Route;
 // Route::get('/', function () {
 //     return view('auth/login');
 // });
+//Create payment
+Route::get('/checkout', [App\Http\Controllers\OrderController::class, 'checkout'])->name('order.checkout');
+Route::post('/process-order', [App\Http\Controllers\OrderController::class, 'processOrder'])->name('order.process');
 
 Route::get('/generate-pdf', [App\Http\Controllers\PDFController::class, 'generatePDF']);
-
+//Create real chat
 Route::get('/testing', [App\Http\Controllers\MessagesController::class, 'testing']);
 Route::get('/load-latest-messages', [App\Http\Controllers\MessagesController::class, 'getLoadLatestMessages']);
 Route::post('/send', [App\Http\Controllers\MessagesController::class, 'postSendMessage']);
