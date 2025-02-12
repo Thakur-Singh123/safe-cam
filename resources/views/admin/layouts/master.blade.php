@@ -52,7 +52,9 @@
      var base_url = "{{ url('/') }}";
       </script>
    <!--custom-scrip-->
+   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
    <script src="{{ asset('public/js/custom-script.js') }}"></script>
+   <script src="{{ asset('public/js/state-city-script.js') }}"></script>
    <!--jquery-->
    <script src="{{ asset('public/admin/plugins/jquery/jquery.min.js') }}"></script>
    <script src="{{ asset('public/admin/plugins/select2/js/select2.full.min.js') }}"></script>

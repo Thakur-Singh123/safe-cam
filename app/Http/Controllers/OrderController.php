@@ -1,11 +1,13 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\Mail;
+use App\Mail\OrderConfirmationMail;
 use Illuminate\Http\Request;
 use App\Models\Order;
 use Stripe\Stripe;
 use Stripe\Charge;
+use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Support\Facades\Session;
 
 class OrderController extends Controller
@@ -67,6 +69,10 @@ class OrderController extends Controller
             'payment_status' => 'Paid',
             'stripe_customer_id' => $customer->id, 
         ]);
+
+        //Send Order Confirmation Email
+        // Mail::to($order->customer_email)->send(new OrderConfirmationMail($order));
+
         //Check if order created or not    
         if ($order) {
             Session::flash('success', 'Order placed successfully!');
@@ -76,5 +82,19 @@ class OrderController extends Controller
         }
     }
     
+    //Function for generate pdf file
+    public function generate_pdF($id) {
+        //Get order detail
+        $order = Order::find($id);
+        echo "<pre>"; print_r($order->toArray());exit;
+        $pdf = Pdf::loadView('order.pdf', compact('order'));
+        //Get pdf folder
+        $filePath = public_path('uploads/pdf/order_invoice_' . $id . '.pdf');
+        //echo $filePath;exit;
+        //store pdf folder
+        $pdf->save($filePath);
+        //Return pdf download 
+        return response()->download($filePath);
+    }
 }
 

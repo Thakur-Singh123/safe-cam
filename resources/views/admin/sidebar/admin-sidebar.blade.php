@@ -114,6 +114,14 @@
                   </li>
                </ul>
             </li>
+            <li class="nav-item {{ Request::is('checkout') || Request::is('checkout/*') ? 'menu-open' : '' }}">
+               <a href="{{ url('checkout') }}" class="nav-link {{ Request::is('checkout') || Request::is('checkout/*') ? 'active' : '' }}">
+               <i class="nav-icon fas fa-shopping-cart"></i>
+                  <p>
+                     Checkout
+                  </p>
+               </a>
+            </li>
             <li class="nav-item {{ Request::is('admin/all-contacts') || Request::is('admin/edit-contact/*') ? 'menu-open' : '' }}">
                <a href="{{ url('admin/all-contacts') }}" class="nav-link {{ Request::is('admin/all-contacts') || Request::is('admin/edit-contact/*') ? 'active' : '' }}">
                   <i class="nav-icon fas fa-envelope"></i>
