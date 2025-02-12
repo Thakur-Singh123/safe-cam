@@ -16,6 +16,9 @@ use Illuminate\Support\Facades\Route;
 // Route::get('/', function () {
 //     return view('auth/login');
 // });
+//Order pdf
+Route::get('admin/order-pdf/{id}', [App\Http\Controllers\OrderController::class, 'generate_pdF'])->name('order.pdf');
+
 //Create payment
 Route::get('/checkout', [App\Http\Controllers\OrderController::class, 'checkout'])->name('order.checkout');
 Route::post('/process-order', [App\Http\Controllers\OrderController::class, 'processOrder'])->name('order.process');
@@ -72,7 +75,7 @@ Route::group(['middleware' => 'auth'], function () {
         Route::post('admin/update-service/{id}', [App\Http\Controllers\Admin\ServiceController::class, 'update_service'])->name('admin.update.service');
         Route::get('admin/trash-service', [App\Http\Controllers\Admin\ServiceController::class, 'trash_service']);
         Route::get('admin/delete-parament-service', [App\Http\Controllers\Admin\ServiceController::class, 'delete_parament_service']);
-        //Testimonial 
+        //Testimonial
         Route::get('admin/add-new-testimonial', [App\Http\Controllers\Admin\TestimonialController::class, 'add_testimonial']);
         Route::post('admin/submit-testimonial', [App\Http\Controllers\Admin\TestimonialController::class, 'submit_testimonial'])->name('admin.submit.testimonial');
         Route::get('admin/all-testimonials', [App\Http\Controllers\Admin\TestimonialController::class, 'all_testimonials']);
@@ -80,7 +83,7 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('admin/edit-testimonial/{id}', [App\Http\Controllers\Admin\TestimonialController::class, 'edit_testimonial']);
         Route::post('admin/update-testimonial/{id}', [App\Http\Controllers\Admin\TestimonialController::class, 'update_testimonial'])->name('admin.update.testimonial');
         Route::get('admin/trash-testimonial', [App\Http\Controllers\Admin\TestimonialController::class, 'trash_testimonial']);
-        Route::get('admin/delete-parament-testimonial', [App\Http\Controllers\Admin\TestimonialController::class, 'delete_parament_testimonial']);
+        Route::get('admin/delete-parament-testimonial', [App\Http\Controllers\Admin\TestimonialController::class, 'delete_parament_testimonial']);        
         //Contact
         Route::get('admin/all-contacts', [App\Http\Controllers\Admin\ContactController::class, 'all_contacts']); 
         Route::get('admin/all-contacts-trash-list', [App\Http\Controllers\Admin\ContactController::class, 'all_contacts_trash']);
